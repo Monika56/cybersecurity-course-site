@@ -15,7 +15,7 @@ export default function DailyChallenge({ uid }: { uid: string }){
   const today = new Date();
   const todayKey = today.toISOString().slice(0,10);
   const challenge = all[dailyIndex(all.length, today)];
-
+/* eslint-enable @typescript-eslint/no-explicit-any */
   useEffect(()=>{
     (async()=>{
       const uref = doc(db, "users", uid);

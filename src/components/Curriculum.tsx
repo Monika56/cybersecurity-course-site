@@ -7,7 +7,7 @@ import { db } from "@/lib/firebase";
 
 export default function Curriculum({ uid }: { uid: string }){
   const [progress, setProgress] = useState<number[]>([]);
-
+/* eslint-enable @typescript-eslint/no-explicit-any */
   useEffect(()=>{
     (async()=>{
       const ref = doc(db, "users", uid);
@@ -20,6 +20,7 @@ export default function Curriculum({ uid }: { uid: string }){
       }
     })();
   },[uid]);
+
 
   const total = weeks.length;
   const pct = Math.round((progress.length/total)*100);

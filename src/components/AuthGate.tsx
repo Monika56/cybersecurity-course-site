@@ -9,7 +9,7 @@ export default function AuthGate({ children }: { children: ReactNode }){
   const [mode, setMode] = useState<"signin"|"signup">("signin");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+/* eslint-enable @typescript-eslint/no-explicit-any */
   useEffect(()=> onAuthStateChanged(auth, (u)=> setUser(u ? { uid: u.uid, email: u.email } : null)), []);
 
   if (!user) {
