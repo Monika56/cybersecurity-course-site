@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+body { @apply bg-gradient-to-b from-white to-slate-50 text-slate-900; }
+
+// =========================================================
+// FILE: tailwind.config.ts
+// =========================================================
+import type { Config } from "tailwindcss";
+const config: Config = {
+  content: ["./src/app/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
+  theme: { extend: {} },
+  plugins: [],
+};
+export default config;
