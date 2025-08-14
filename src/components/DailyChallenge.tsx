@@ -15,13 +15,12 @@ export default function DailyChallenge({ uid }: { uid: string }){
   const today = new Date();
   const todayKey = today.toISOString().slice(0,10);
   const challenge = all[dailyIndex(all.length, today)];
-/* eslint-enable @typescript-eslint/no-explicit-any */
   useEffect(()=>{
     (async()=>{
       const uref = doc(db, "users", uid);
       const snap = await getDoc(uref);
       if (snap.exists()){
-        const data = snap.data() as any;
+        const data = snap.data() as unknown;
         setCustom(data.customChallenges || []);
         setCompletedDates(data.completedDates || []);
         setStreak(data.streak || 0);

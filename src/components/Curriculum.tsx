@@ -13,7 +13,7 @@ export default function Curriculum({ uid }: { uid: string }){
       const ref = doc(db, "users", uid);
       const snap = await getDoc(ref);
       if (snap.exists()){
-        const data = snap.data() as any;
+        const data = snap.data() as unknown;
         setProgress(data.progress || []);
       } else {
         await setDoc(ref, { progress: [] }, { merge: true });

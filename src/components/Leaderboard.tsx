@@ -14,7 +14,7 @@ export default function Leaderboard(){
       const q = query(collection(db, "leaderboard"), orderBy("streak", "desc"));
       const snap = await getDocs(q);
       const list: { uid: string; streak: number }[] = [];
-      snap.forEach(d=> list.push(d.data() as any));
+      snap.forEach(d=> list.push(d.data() as unknown));
       setRows(list.slice(0,20));
     })();
   },[]);
