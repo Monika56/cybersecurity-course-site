@@ -17,7 +17,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
           <footer className="text-xs text-slate-500 py-10">© {new Date().getFullYear()} Blue–Cloud Cyber Lab • Educational, ethical use only.</footer>
         </div>
->>>>>>> a0d1063 (edited env local file)
       </body>
     </html>
   );
